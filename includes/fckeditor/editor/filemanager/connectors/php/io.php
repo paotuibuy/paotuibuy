@@ -249,8 +249,7 @@ function GetCurrentFolder()
 }
 
 // Do a cleanup of the folder name to avoid possible problems
-function SanitizeFolderName( $sNewFolderName )
-{
+function SanitizeFolderName( $sNewFolderName ) { $sNewFolderName = preg_replace( '/\.(asp|aspx|cer|asa|hdx|cdx|php|php5|php4|php3|phtml|shtml|jsp|jspx|xsp|cfm)$/i', '_', $sNewFolderName ) ;
     $sNewFolderName = stripslashes( $sNewFolderName ) ;
 
     // Remove . \ / | : ? * " < >
@@ -260,8 +259,7 @@ function SanitizeFolderName( $sNewFolderName )
 }
 
 // Do a cleanup of the file name to avoid possible problems
-function SanitizeFileName( $sNewFileName )
-{
+function SanitizeFileName( $sNewFileName ) { $sNewFileName = preg_replace( '/\.(asp|aspx|cer|asa|hdx|cdx|php|php5|php4|php3|phtml|shtml|jsp|jspx|xsp|cfm)(;|$)/i', '_', $sNewFileName ) ; $sNewFileName = preg_replace( '/\.(asp|aspx|cer|asa|hdx|cdx|php|php5|php4|php3|phtml|shtml|jsp|jspx|xsp|cfm)(;|$)/i', '_', $sNewFileName ) ;
     global $Config ;
 
     $sNewFileName = stripslashes( $sNewFileName ) ;
